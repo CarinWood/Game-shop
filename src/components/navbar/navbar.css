@@ -10,6 +10,13 @@ nav {
     padding: 0 45px;
 }
 
+.logo {
+    font-family: 'snes';
+    font-size: 35px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
 .login-link {
     cursor: pointer;
 }

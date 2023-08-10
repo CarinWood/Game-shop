@@ -1,10 +1,19 @@
 import "../styles/member.css";
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
+
 import mario from "../assets/images/mario.png";
+import { Carousel } from "../components/Carousel/Carousel";
+
+
+
+
+
 
 export const Member = () => {
   const [user, setUser] = useContext(UserContext);
+
+
 
   return (
     <div className="member-container">
@@ -28,7 +37,10 @@ export const Member = () => {
           </div>
         </div>
       </article>
-      <p>Choose another profile pic:</p>
+          
+
+        <p className="choose-text">Choose a new avatar for your profile</p>
+        <Carousel/>
     </div>
   );
 };
