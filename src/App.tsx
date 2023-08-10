@@ -4,6 +4,7 @@ import { UserContextProvider } from './contexts/UserContext';
 import { Loginpage } from './pages/Loginpage';
 import { Member } from './pages/Member';
 import { Routes, Route} from 'react-router-dom'
+import Search from './pages/Search';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Loginpage/>} />
           <Route path="/member" element={<Member/>} />
+          <Route path="/search" element={<Search/>} />
         </Routes>
 
       </UserContextProvider>

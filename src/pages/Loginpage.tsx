@@ -10,7 +10,7 @@ import { Success } from '../components/Success'
 
 export const Loginpage = () => {
 
-  const [showLoginForm, setShowLoginForm]= useState<boolean>(false);
+  const [showLoginForm, setShowLoginForm]= useState<boolean>(true);
   const [successful, setSuccessful]= useState<boolean>(false);
 
   const showLogin = () => {

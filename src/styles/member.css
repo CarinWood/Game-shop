@@ -6,3 +6,64 @@
     justify-content: center;
     align-items: center;
 }
+
+.welcome-message {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.member-card {
+    width: 580px;
+    height: 280px;
+    background-color: rgb(33, 155, 33);
+    border-radius: 10px;
+    color: var(--white);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card-headline {
+    margin-top: 30px;
+    margin-bottom: 20px;    
+}
+
+.member-card p span {
+    color: goldenrod;
+}
+
+.image-container {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin-top: -50px;
+    margin-right: 55px;
+}
+
+.image-container img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    z-index: 9;
+}
+
+
+.left {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+}
+
+.left p {
+    width: 75%;
+}
+
+.validity {
+    font-size: 12px;
+    margin-top: 10px;
+}
