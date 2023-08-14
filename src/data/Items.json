@@ -18,5 +18,41 @@
         "title": "Yoshi's Crafted World",
         "price": 49.99,
         "url": "/images/yoshiscraftedworld.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Animal Crossing New Horizons",
+        "price": 59.99,
+        "url": "/images/animalcrossing.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Pokemon Scarlet",
+        "price": 52.99,
+        "url": "/images/pokemon.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Zelda Link's Awakening",
+        "price": 55.99,
+        "url": "/images/zelda.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Elden Ring",
+        "price": 55.99,
+        "url": "/images/elden.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Stray",
+        "price": 39.99,
+        "url": "/images/stray.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Resident Evil 4",
+        "price": 62.99,
+        "url": "/images/resident.jpg"
     }
 ]

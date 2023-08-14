@@ -10,20 +10,20 @@ import yoshihead from '../../assets/images/yoshihead.png'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 import '@splidejs/react-splide/css/sea-green';
-import { ProfilePicContext } from '../../contexts/ProfilePicContext';
+import { useProfilePic } from '../../contexts/ProfilePicContext';
 
 
 
 
 export const Carousel = () => {
 
-    const [profilePic, setProfilePic] = useContext(ProfilePicContext)
+    const {profilePic, setProfilePic} = useProfilePic()
 
     const handleClick = (character) => {
         setProfilePic(character)
     }
 
-    console.log(profilePic)
+   
 
   
   return (
@@ -40,7 +40,7 @@ export const Carousel = () => {
        
                 <div 
                     className={profilePic === 'mario' ? 'slider-image-container frame' : 'slider-image-container'} 
-                    onClick={()=>handleClick('mario')}
+                   
                 >
                     <img  src={mariohead} onClick={()=>handleClick('mario')}/>
                 </div>
@@ -51,8 +51,7 @@ export const Carousel = () => {
             <SplideSlide>
                
                 <div 
-                    className={profilePic === 'princess' ? 'slider-image-container frame': 'slider-image-container'} 
-                    onClick={()=>handleClick('princess')}
+                    className={profilePic === 'princess' ? 'slider-image-container frame': 'slider-image-container'}
                 >
                     <img src={princesshead}  onClick={()=>handleClick('princess')}/>
                 </div>
@@ -61,7 +60,6 @@ export const Carousel = () => {
             <SplideSlide>
                 <div 
                     className={profilePic === 'luigi' ? 'slider-image-container frame': 'slider-image-container'}
-                    onClick={()=>handleClick('luigi')}
                 >
                     <img src={luigihead}  onClick={()=>handleClick('luigi')}/>
                 </div>
@@ -70,7 +68,7 @@ export const Carousel = () => {
             <SplideSlide>
                 <div 
                     className={profilePic === 'toad' ? 'slider-image-container frame': 'slider-image-container'} 
-                    onClick={()=>handleClick('toad')}
+                    
                 >
                     <img src={toadhead} onClick={()=>handleClick('toad')}/>
                 </div>
@@ -79,7 +77,7 @@ export const Carousel = () => {
             <SplideSlide>
                 <div 
                     className={profilePic === 'yoshi' ? 'slider-image-container frame': 'slider-image-container'}
-                    onClick={()=>handleClick('yoshi')}>
+                >
                     <img src={yoshihead}  onClick={()=>handleClick('yoshi')}/>
                 </div>
             </SplideSlide>

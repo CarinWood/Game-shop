@@ -8,7 +8,7 @@ export const Shop = () => {
     <div className='shop-container'>
       {gameItems.map((item) => (
         <div key={item.id}>
-          <GameItem title={item.title} url={item.url}/>
+          <GameItem title={item.title} url={item.url} price={item.price}/>
         </div>
       ))}
     </div>

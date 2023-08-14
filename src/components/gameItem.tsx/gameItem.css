@@ -16,12 +16,16 @@
     cursor: pointer;
 }
 
-.card-title {
-    width: 150px;
-    height: 60px;
+.card-title, .card-price {
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.card-price {
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .card-btn {
@@ -40,9 +44,7 @@
 }
 
 .card-btn:hover {
-    color: var(--red);
-    background-color: var(--white);
-    border: 1.5px solid var(--red);
+    opacity: 0.6;
 }
 
 .cart-btn:active {

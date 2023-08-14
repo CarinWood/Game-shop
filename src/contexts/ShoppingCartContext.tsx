@@ -7,7 +7,9 @@ type ShoppingCartProviderProps = {
 type shoppingCartContext = {
     openCart: () => void
     closeCart: () => void
+    addToQuantity: () => void
     open: boolean
+    quantity: number
 }
 
 
@@ -19,15 +21,24 @@ export function useShoppingCart() {
 
 export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
         const [open, setOpen] = useState(false)
+        const [quantity, setQuantity] = useState(0);
+
 
         const openCart = () => setOpen(true)
         const closeCart = () => setOpen(false)
+        const addToQuantity = () => setQuantity(quantity + 1)
+
+        
+        
+     
 
         return (
             <shoppingCartContext.Provider value={{
                 openCart,
                 closeCart,
-                open
+                open,
+                quantity,
+                addToQuantity
                 }}
             >
                 {children}
