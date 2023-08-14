@@ -7,14 +7,18 @@ import { Routes, Route} from 'react-router-dom'
 import Search from './pages/Search';
 import {  ProfilePicContextProvider } from './contexts/ProfilePicContext';
 import { Shop } from './pages/Shop';
+import { Cart } from './components/cart/Cart';
+import { ShoppingCartProvider } from './contexts/ShoppingCartContext';
 
 function App() {
   return (
     <div className="App">
+      <ShoppingCartProvider>
       <UserContextProvider>
         <ProfilePicContextProvider>
 
         <Navbar/>
+        <Cart/>
 
         <Routes>
           <Route path="/login" element={<Loginpage/>} />
@@ -25,6 +29,7 @@ function App() {
 
         </ProfilePicContextProvider>
       </UserContextProvider>
+      </ShoppingCartProvider>
     </div>
   );
 }

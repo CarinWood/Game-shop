@@ -9,12 +9,16 @@ import toadhead from '../../assets/images/toadhead.png'
 import yoshihead from '../../assets/images/yoshihead.png'
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import { ProfilePicContext } from '../../contexts/ProfilePicContext'
+import { FaCartShopping } from "react-icons/fa6";
+import { useShoppingCart } from '../../contexts/ShoppingCartContext'
 
 
 export const Navbar = () => {
 
     const [user, setUser] = useContext(UserContext)
     const [profilePic, setProfilePic] = useContext(ProfilePicContext)
+
+    const { openCart, open } = useShoppingCart()
 
     const navigate = useNavigate()
 
@@ -45,6 +49,8 @@ export const Navbar = () => {
       
     }
 
+   
+
   return (
     <nav>
         <p className='logo' onClick={toShop}>The Game Shop</p>
@@ -57,6 +63,10 @@ export const Navbar = () => {
               </div>
               : <p className='login-link' onClick={toLogin}>Login</p>}
               <div onClick={toSearch}><HiOutlineMagnifyingGlass className='magn'/></div>
+              <p className='cart-button' onClick={openCart}>
+                <FaCartShopping/>
+                <span className='digit'>6</span>
+              </p>
           </div>
         
     </nav>

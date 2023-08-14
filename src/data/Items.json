@@ -1,0 +1,22 @@
+
+ 
+ [
+    {
+        "id": 1,
+        "title": "New Super Mario Bros. U Deluxe",
+        "price": 79.99,
+        "url": "/images/newsupermario.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Mario Kart 8 Deluxe",
+        "price": 79.99,
+        "url": "/images/mariokart.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Yoshi's Crafted World",
+        "price": 49.99,
+        "url": "/images/yoshiscraftedworld.jpg"
+    }
+]
