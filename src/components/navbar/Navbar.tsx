@@ -1,4 +1,4 @@
-import { UserContext } from '../../contexts/UserContext'
+import { UserContext, useUserContext } from '../../contexts/UserContext'
 import './navbar.css'
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -15,7 +15,7 @@ import { useShoppingCart } from '../../contexts/ShoppingCartContext'
 
 export const Navbar = () => {
 
-    const [user, setUser] = useContext(UserContext)
+    const {user, setUser} = useUserContext()
     const {profilePic} = useProfilePic()
 
     const { openCart, open, quantity } = useShoppingCart()

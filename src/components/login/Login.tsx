@@ -1,7 +1,7 @@
 import { FC,useState, useEffect, useContext } from 'react'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom'
-import { UserContext } from '../../contexts/UserContext';
+import { UserContext, useUserContext } from '../../contexts/UserContext';
 
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 
 
 export const Login:FC<Props> = ({showRegister}) => {
-    const [user, setUser] = useContext(UserContext)
+    const {user, setUser} = useUserContext()
     const [hidePassword, setHidePassword] = useState(true)
     const [password, setPassword] = useState<string | null>('')
     const [username, setUsername] = useState<string | null>('')

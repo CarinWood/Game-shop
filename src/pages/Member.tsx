@@ -1,6 +1,6 @@
 import "../styles/member.css";
 import { useContext } from "react";
-import { UserContext } from "../contexts/UserContext";
+import { UserContext, useUserContext } from "../contexts/UserContext";
 
 import mario from "../assets/images/mario.png";
 import { Carousel } from "../components/Carousel/Carousel";
@@ -11,7 +11,7 @@ import { Carousel } from "../components/Carousel/Carousel";
 
 
 export const Member = () => {
-  const [user, setUser] = useContext(UserContext);
+  const {user, setUser} = useUserContext()
 
 
 
