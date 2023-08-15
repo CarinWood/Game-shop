@@ -13,13 +13,16 @@ type cartItem = {
 }
 
 type shoppingCartContext = {
-    addToQuantity: () => void
+   
     open: boolean
     setOpen: React.Dispatch<React.SetStateAction<boolean>>
     quantity: number
+    setQuantity: React.Dispatch<React.SetStateAction<number>>
     cart: cartItem[]
     setCart: React.Dispatch<React.SetStateAction<cartItem[]>>;
-    decreaseQuantity: () => void
+    total: number
+    setTotal: React.Dispatch<React.SetStateAction<number>>
+  
 }
 
 
@@ -33,25 +36,18 @@ export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
         const [open, setOpen] = useState<boolean>(false)
         const [quantity, setQuantity] = useState(0);
         const [cart, setCart] = useState<cartItem[]>([])
-
-
-      
-        const addToQuantity = () => setQuantity(quantity + 1)
-        const decreaseQuantity = () => setQuantity(quantity -1)
-
-        
-        
-     
+        const [total, setTotal] = useState(0)
 
         return (
             <shoppingCartContext.Provider value={{
                 open,
                 setOpen,
                 quantity,
-                addToQuantity,
+                setQuantity,
                 cart, 
                 setCart,
-                decreaseQuantity
+                total,
+                setTotal
                 }}
             >
                 {children}

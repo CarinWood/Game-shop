@@ -17,7 +17,7 @@ const GameItem = ({_id, _title, _url, _price}: gameItemProps) => {
 
     const [favourite, isFavourite] = useState(false)
     const [openImage, setOpenImage] = useState(false)
-    const {addToQuantity, cart, setCart} = useShoppingCart()
+    const {cart, setCart} = useShoppingCart()
 
     useEffect(() => {
    
@@ -38,7 +38,7 @@ const GameItem = ({_id, _title, _url, _price}: gameItemProps) => {
     }
 
     const handleBuyButton = () => {
-        addToQuantity()
+    
         const product = {
             id: _id,
             title: _title,

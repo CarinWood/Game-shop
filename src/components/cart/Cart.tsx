@@ -6,12 +6,13 @@ import { RiCloseCircleFill } from "react-icons/ri";
 
 
 export const Cart = () => {
-  const { setOpen, open, cart, setCart, decreaseQuantity, addToQuantity} = useShoppingCart();
+  const { setOpen, open, cart, setCart, setQuantity, total, setTotal} = useShoppingCart();
 
 
 
   useEffect(() => {
       calculateQuantity()
+      calculateTotal()
 
   }, [cart])
 
@@ -23,8 +24,16 @@ export const Cart = () => {
         sum += cart[i].quantity;
         
       }
+      setQuantity(sum)
+  }
 
-      console.log(sum)
+
+  const calculateTotal = () => {
+        const totalSum = cart.reduce((total, item) => total + item.quantity * item.price, 0);
+        const formattedTotal = parseFloat(totalSum.toFixed(2))
+      
+       
+        setTotal(formattedTotal)
   }
 
 
@@ -32,11 +41,11 @@ export const Cart = () => {
 
   const remove = (id: number) => {
       setCart(cart.filter((prevItem) => prevItem.id !== id))
-      decreaseQuantity()
+   
   }
  
   const handlePlus = (id: number) => {
-    addToQuantity()
+
     const updatedCart = cart.map(item => {
       if (item.id === id) {
         return { ...item, quantity: item.quantity + 1 }; // Update the quantity property
@@ -49,7 +58,7 @@ export const Cart = () => {
 
 
   const handleMinus = (id: number) => {
-    decreaseQuantity()
+   
     const updatedCart = cart.map(item => {
       if (item.id === id) {
         return { ...item, quantity: item.quantity - 1 }; // Update the quantity property
@@ -92,7 +101,7 @@ export const Cart = () => {
           })}
  
       <button className="checkout-btn">Checkout</button>
-      <p className="tot">Subtotal: <span>$ 5329</span></p>
+      <p className="tot">Subtotal: <span>$ {total}</span></p>
     </div>
   );
 };
