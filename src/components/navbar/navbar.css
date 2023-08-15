@@ -11,10 +11,23 @@ nav {
     z-index: 100;
 }
 
+.navbar-left {
+    position: relative;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controller-img {
+    width: 50px;
+    margin-left: 5px;
+}
+
 .logo {
-    font-family: 'snes';
-    font-size: 35px;
-    letter-spacing: 2px;
+    font-family: 'spritendo';
+    font-size: 16px;
+    letter-spacing: 1px;
     cursor: pointer;
 }
 

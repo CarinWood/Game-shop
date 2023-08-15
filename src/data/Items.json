@@ -5,54 +5,63 @@
         "id": 1,
         "title": "New Super Mario Bros. U Deluxe",
         "price": 79.99,
-        "url": "/images/newsupermario.jpg"
+        "url": "/images/newsupermario.jpg",
+        "quantity": 0
     },
     {
         "id": 2,
         "title": "Mario Kart 8 Deluxe",
         "price": 79.99,
-        "url": "/images/mariokart.jpg"
+        "url": "/images/mariokart.jpg",
+        "quantity": 0
     },
     {
         "id": 3,
         "title": "Yoshi's Crafted World",
         "price": 49.99,
-        "url": "/images/yoshiscraftedworld.jpg"
+        "url": "/images/yoshiscraftedworld.jpg",
+        "quantity": 0
     },
     {
         "id": 4,
         "title": "Animal Crossing New Horizons",
         "price": 59.99,
-        "url": "/images/animalcrossing.jpg"
+        "url": "/images/animalcrossing.jpg",
+        "quantity": 0
     },
     {
         "id": 5,
         "title": "Pokemon Scarlet",
         "price": 52.99,
-        "url": "/images/pokemon.jpg"
+        "url": "/images/pokemon.jpg",
+        "quantity": 0
     },
     {
         "id": 6,
         "title": "Zelda Link's Awakening",
         "price": 55.99,
-        "url": "/images/zelda.jpg"
+        "url": "/images/zelda.jpg",
+        "quantity": 0
     },
     {
         "id": 7,
         "title": "Elden Ring",
         "price": 55.99,
-        "url": "/images/elden.jpg"
+        "url": "/images/elden.jpg",
+        "quantity": 0
     },
     {
         "id": 8,
         "title": "Stray",
         "price": 39.99,
-        "url": "/images/stray.jpg"
+        "url": "/images/stray.jpg",
+        "quantity": 0
     },
     {
         "id": 9,
         "title": "Resident Evil 4",
         "price": 62.99,
-        "url": "/images/resident.jpg"
+        "url": "/images/resident.jpg",
+        "quantity": 0
     }
 ]

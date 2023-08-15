@@ -1,6 +1,5 @@
-import { UserContext, useUserContext } from '../../contexts/UserContext'
+import { useUserContext } from '../../contexts/UserContext'
 import './navbar.css'
-import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import mariohead from '../../assets/images/mariohead.png'
 import luigihead from '../../assets/images/luigihead.png'
@@ -18,21 +17,23 @@ export const Navbar = () => {
     const {user, setUser} = useUserContext()
     const {profilePic} = useProfilePic()
 
-    const { openCart, open, quantity } = useShoppingCart()
+    const { open, quantity, setOpen } = useShoppingCart()
 
     const navigate = useNavigate()
 
     const toLogin = () => {
         navigate('/login')
         setUser(null)
+        setOpen(false)
     }
   
     const toShop = () => {
         navigate('/shop')
-     
+        setOpen(false)
     }
 
     const toSearch = () => {
+      setOpen(false)
       navigate('/search')
     }
 
@@ -49,11 +50,17 @@ export const Navbar = () => {
       
     }
 
+    const toggleCart = () => {
+      setOpen(!open)
+    }
+
    
 
   return (
     <nav>
-        <p className='logo' onClick={toShop}>The Game Shop</p>
+          <div className='navbar-left'>
+              <p className='logo' onClick={toShop}>The Game Shop</p>
+          </div>
         
           <div className='navbar-right'>
               {user !== null ? 
@@ -63,7 +70,7 @@ export const Navbar = () => {
               </div>
               : <p className='login-link' onClick={toLogin}>Login</p>}
               <div onClick={toSearch}><HiOutlineMagnifyingGlass className='magn'/></div>
-              <p className='cart-button' onClick={openCart}>
+              <p className='cart-button' onClick={toggleCart}>
                 <FaCartShopping/>
                 <span className='digit'>{quantity}</span>
               </p>

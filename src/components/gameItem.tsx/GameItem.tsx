@@ -7,19 +7,20 @@ import { useShoppingCart } from '../../contexts/ShoppingCartContext';
 
 
 type gameItemProps = {
-    title: string
-    url: string
-    price: number
+    _title: string
+    _url: string
+    _price: number
+    _id: number
 }
 
-const GameItem = ({title, url, price}: gameItemProps) => {
+const GameItem = ({_id, _title, _url, _price}: gameItemProps) => {
 
     const [favourite, isFavourite] = useState(false)
     const [openImage, setOpenImage] = useState(false)
-    const {addToQuantity} = useShoppingCart()
+    const {addToQuantity, cart, setCart} = useShoppingCart()
 
     useEffect(() => {
-        console.log(favourite)
+   
     }, [favourite])
 
  
@@ -36,6 +37,20 @@ const GameItem = ({title, url, price}: gameItemProps) => {
         setOpenImage(false)
     }
 
+    const handleBuyButton = () => {
+        addToQuantity()
+        const product = {
+            id: _id,
+            title: _title,
+            url: _url,
+            price: _price,
+            quantity: 1
+        }
+        setCart(prevCart => [...prevCart, product])
+    }
+
+
+
 
 
   return (
@@ -44,19 +59,19 @@ const GameItem = ({title, url, price}: gameItemProps) => {
 
             {/* image */}
             <img className='card-img' 
-                src={url} 
-                alt={title} 
+                src={_url} 
+                alt={_title} 
                 onClick={() => openLargerImage()}
             />
 
             {/* price and title */}
      
-            <p className='card-title'>{title}</p>
-            <p className='card-price'>${price}</p>
+            <p className='card-title'>{_title}</p>
+            <p className='card-price'>${_price}</p>
        
 
             {/* add to cart button */}
-            <button className='card-btn' onClick={addToQuantity}>Add to cart</button>
+            <button className='card-btn' onClick={handleBuyButton}>Add to cart</button>
 
             {/* favourite heart */}
             {favourite ? <FaHeart className='card-fav red' onClick={() => handleClickHeart()}/>
@@ -65,7 +80,7 @@ const GameItem = ({title, url, price}: gameItemProps) => {
 
         </article>
 
-        {openImage && <LargerImage closeLargerImage={closeLargerImage} image={url}/>}
+        {openImage && <LargerImage closeLargerImage={closeLargerImage} image={_url}/>}
 
       
     </>

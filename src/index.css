@@ -8,6 +8,11 @@
   src: url('./assets/fonts/SnesItalic-1G9Be.ttf');
 }
 
+@font-face {
+  font-family: 'spritendo';
+  src: url('./assets/fonts/RoSpritendoSemiboldBeta-vmVwZ.otf');
+}
+
 :root {
   --red: #e60012;
   --black: #000;
