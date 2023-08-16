@@ -1,4 +1,7 @@
 import '../styles/checkout.css'
+import paypal from '../assets/images/paypal.png'
+import swish from '../assets/images/swish.png'
+import klarna from '../assets/images/klarna.png'
 
 export const Checkout = () => {
   return (
@@ -41,15 +44,34 @@ export const Checkout = () => {
 
             <p className='checkout-headline payment-method'>Payment Method</p>
           
-            <input type="radio" id="radio1" name="payment"/>
-            <label htmlFor="radio1">Credit card</label>
+            <div className='payment-div radio-first'>
+                <div>
+                    <input type="radio" id="radio1" name="payment"/>
+                    <label htmlFor="radio1">Credit card</label>
+                </div>
+                    <div className='logo-container klarna'><img src={klarna} alt="klarna logo"/></div>
+           
+            </div>
 
-            <input type="radio" id="radio2" name="payment"/>
-            <label htmlFor='radio2'>Invoice</label>
-            
-            <input type="radio" id="radio3" name="payment"/>
-            <label htmlFor='radio3'>Swisch</label>
+            <div className='payment-div radio-second'>
+                <div>
+                    <input type="radio" id="radio2" name="payment"/>
+                    <label htmlFor='radio2'>Swish</label>
+                </div>
+                    <div className='logo-container'><img src={swish} alt="swish logo"/></div>
+           
+            </div>
+
+            <div className='payment-div radio-third'>
+                <div>
+                    <input type="radio" id="radio3" name="payment"/>
+                    <label htmlFor='radio3'>PayPal</label>
+                </div>
+                
+                    <div className='logo-container'><img src={paypal} alt="paypal logo"/></div>
+            </div>
         </div>
     </div>
   )
 }
+ 
