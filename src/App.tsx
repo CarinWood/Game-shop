@@ -9,6 +9,7 @@ import {  ProfilePicContextProvider } from './contexts/ProfilePicContext';
 import { Shop } from './pages/Shop';
 import { Cart } from './components/cart/Cart';
 import { ShoppingCartProvider } from './contexts/ShoppingCartContext';
+import { Checkout } from './pages/Checkout';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/member" element={<Member/>} />
           <Route path="/search" element={<Search/>} />
           <Route path="/shop" element={<Shop/>} />
+          <Route path="/checkout" element={<Checkout/>}/>
         </Routes>
 
         </ProfilePicContextProvider>

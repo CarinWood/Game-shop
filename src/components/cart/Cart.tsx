@@ -3,11 +3,12 @@ import { useShoppingCart } from "../../contexts/ShoppingCartContext";
 import "./cart.css";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { RiCloseCircleFill } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 
 
 export const Cart = () => {
   const { setOpen, open, cart, setCart, setQuantity, total, setTotal, handlePlus} = useShoppingCart();
-
+  const navigate = useNavigate()
 
 
   useEffect(() => {
@@ -64,6 +65,11 @@ export const Cart = () => {
     setOpen(false)
   }
 
+  const toCheckout = () => {
+    navigate('/checkout')
+    setOpen(false)
+  }
+
   return (
     <div className={open ? "cart active" : "cart inactive"} >
       <p onClick={()=> handleCloseClick()}>
@@ -90,7 +96,7 @@ export const Cart = () => {
                     </div>
           })}
  
-      <button className="checkout-btn">Checkout</button>
+      <button className="checkout-btn" onClick={toCheckout}>Checkout</button>
       <p className="tot">Subtotal: <span>$ {total}</span></p>
     </div>
   );
