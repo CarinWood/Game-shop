@@ -83,7 +83,7 @@ export const Cart = () => {
                               </p>
                               <p className="minus" onClick={() => handleMinus(item.id)}>-</p>
                               <span className="quant-space">{item.quantity}</span>
-                              <p className="plus" onClick={(ö)=> handlePlus(item.id)}>+</p>
+                              <p className="plus" onClick={()=> handlePlus(item.id)}>+</p>
                               <p className="cart-price">${item.price}</p>
                           </div>
                         </div>
