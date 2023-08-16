@@ -19,9 +19,7 @@ const GameItem = ({_id, _title, _url, _price}: gameItemProps) => {
     const [openImage, setOpenImage] = useState(false)
     const {cart, setCart} = useShoppingCart()
 
-    useEffect(() => {
    
-    }, [favourite])
 
  
 
@@ -38,6 +36,7 @@ const GameItem = ({_id, _title, _url, _price}: gameItemProps) => {
     }
 
     const handleBuyButton = () => {
+        console.log('handleBuyButton is clicked')
     
         const product = {
             id: _id,
@@ -46,7 +45,20 @@ const GameItem = ({_id, _title, _url, _price}: gameItemProps) => {
             price: _price,
             quantity: 1
         }
-        setCart(prevCart => [...prevCart, product])
+
+
+        const productExists = cart.findIndex(item => item.id === _id)
+
+        if(productExists !== -1) {
+            setCart(prevCart => {
+                const updatedCart = [...prevCart]
+                updatedCart[productExists].quantity += 1
+                return updatedCart
+            })
+        } else {
+            setCart(prevCart => [...prevCart, product])
+        }
+       
     }
 
 

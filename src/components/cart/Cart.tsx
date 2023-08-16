@@ -48,7 +48,7 @@ export const Cart = () => {
 
     const updatedCart = cart.map(item => {
       if (item.id === id) {
-        return { ...item, quantity: item.quantity + 1 }; // Update the quantity property
+        return { ...item, quantity: item.quantity + 1 }; 
       }
       return item;
     });
@@ -61,7 +61,7 @@ export const Cart = () => {
    
     const updatedCart = cart.map(item => {
       if (item.id === id) {
-        return { ...item, quantity: item.quantity - 1 }; // Update the quantity property
+        return { ...item, quantity: item.quantity - 1 }; 
       }
       return item;
     });
