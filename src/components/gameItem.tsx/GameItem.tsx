@@ -17,7 +17,7 @@ const GameItem = ({_id, _title, _url, _price}: gameItemProps) => {
 
     const [favourite, isFavourite] = useState(false)
     const [openImage, setOpenImage] = useState(false)
-    const {cart, setCart} = useShoppingCart()
+    const {cart, setCart, handlePlus} = useShoppingCart()
 
    
 
@@ -50,11 +50,7 @@ const GameItem = ({_id, _title, _url, _price}: gameItemProps) => {
         const productExists = cart.findIndex(item => item.id === _id)
 
         if(productExists !== -1) {
-            setCart(prevCart => {
-                const updatedCart = [...prevCart]
-                updatedCart[productExists].quantity += 1
-                return updatedCart
-            })
+            handlePlus(_id)
         } else {
             setCart(prevCart => [...prevCart, product])
         }

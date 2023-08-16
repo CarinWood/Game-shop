@@ -22,6 +22,7 @@ type shoppingCartContext = {
     setCart: React.Dispatch<React.SetStateAction<cartItem[]>>;
     total: number
     setTotal: React.Dispatch<React.SetStateAction<number>>
+    handlePlus: (id: number) => void;
   
 }
 
@@ -38,6 +39,18 @@ export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
         const [cart, setCart] = useState<cartItem[]>([])
         const [total, setTotal] = useState(0)
 
+        const handlePlus = (id: number) => {
+
+            const updatedCart = cart.map(item => {
+              if (item.id === id) {
+                return { ...item, quantity: item.quantity + 1 }; 
+              }
+              return item;
+            });
+          
+            setCart(updatedCart);
+          };
+
         return (
             <shoppingCartContext.Provider value={{
                 open,
@@ -47,7 +60,8 @@ export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
                 cart, 
                 setCart,
                 total,
-                setTotal
+                setTotal,
+                handlePlus
                 }}
             >
                 {children}

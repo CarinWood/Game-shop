@@ -6,7 +6,7 @@ import { RiCloseCircleFill } from "react-icons/ri";
 
 
 export const Cart = () => {
-  const { setOpen, open, cart, setCart, setQuantity, total, setTotal} = useShoppingCart();
+  const { setOpen, open, cart, setCart, setQuantity, total, setTotal, handlePlus} = useShoppingCart();
 
 
 
@@ -44,17 +44,7 @@ export const Cart = () => {
    
   }
  
-  const handlePlus = (id: number) => {
 
-    const updatedCart = cart.map(item => {
-      if (item.id === id) {
-        return { ...item, quantity: item.quantity + 1 }; 
-      }
-      return item;
-    });
-  
-    setCart(updatedCart);
-  };
 
 
   const handleMinus = (id: number) => {
@@ -93,7 +83,7 @@ export const Cart = () => {
                               </p>
                               <p className="minus" onClick={() => handleMinus(item.id)}>-</p>
                               <span className="quant-space">{item.quantity}</span>
-                              <p className="plus" onClick={()=>handlePlus(item.id)}>+</p>
+                              <p className="plus" onClick={(ö)=> handlePlus(item.id)}>+</p>
                               <p className="cart-price">${item.price}</p>
                           </div>
                         </div>
