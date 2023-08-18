@@ -1,14 +1,65 @@
 import '../styles/checkout.css'
-import paypal from '../assets/images/paypal.png'
-import swish from '../assets/images/swish.png'
-import klarna from '../assets/images/klarna.png'
+import { useShoppingCart } from '../contexts/ShoppingCartContext'
+import { useState } from 'react'
+import { IoMdArrowDropdown } from "react-icons/io";
+import { ShippingComponent } from '../components/ShippingComponent'
+import { PaymentComponent } from '../components/PaymentComponent';
+import { useNavigate } from 'react-router-dom';
+import { Footer } from '../footer/Footer';
+import { RedeemCode } from '../components/redeemCode/RedeemCode';
+
+
 
 export const Checkout = () => {
+
+    const {total, setCart} = useShoppingCart()
+    const [openShipping, setOpenShipping] = useState<boolean>(false)
+    const [openPayment, setOpenPayment] = useState<boolean>(false)
+    const [selectedOption, setSelectedOption] = useState('free')
+    const [showMessage, setShowMessage] = useState<boolean>(false)
+    const [paymentMethod, setPaymentMethod] = useState<string>('Klarna')
+    const [hasDiscount, setHasDiscount] = useState<boolean>(false)
+    const [discount, setDiscount] = useState(0)
+  
+    const navigate = useNavigate();
+
+    const toggleShipping = (e: React.FormEvent<HTMLFormElement>) => {
+            e.preventDefault()
+            setOpenShipping(true);
+    }
+
+    const calculateTotal = () => {
+        let freight:number; 
+        selectedOption === 'express' ? freight = 15 : freight = 0;
+        
+        let tot:number = total + freight - discount;
+        return parseFloat(tot.toFixed(2));
+    }
+
+    const openMessage = () => {
+        setShowMessage(true);
+        setOpenPayment(false)
+        setOpenShipping(false)
+    }
+
+    const resetAll = () => {
+        setCart([])
+        navigate('/')
+    }
+
+
+  
+
   return (
+    <>
     <div className="checkout-container">
+      
        
         <div className='information-form'>
-        <p className='checkout-headline'>Your information</p>
+        {showMessage === false &&
+        <form onSubmit={toggleShipping}>
+        
+            <p className='checkout-headline'>Your information</p>
             <div className='name-div'>
                     <input 
                         required
@@ -41,37 +92,52 @@ export const Checkout = () => {
                         className='county-input'
                     />
             </div>
+                    <button className='continue-btn'>Continue<IoMdArrowDropdown/></button>
+        
+            </form>
+            }
 
-            <p className='checkout-headline payment-method'>Payment Method</p>
-          
-            <div className='payment-div radio-first'>
-                <div>
-                    <input type="radio" id="radio1" name="payment"/>
-                    <label htmlFor="radio1">Credit card</label>
-                </div>
-                    <div className='logo-container klarna'><img src={klarna} alt="klarna logo"/></div>
-           
-            </div>
+            {openShipping &&
+            <ShippingComponent 
+            setOpenPayment={setOpenPayment} 
+            setSelectedOption={setSelectedOption}/>
+            }
 
-            <div className='payment-div radio-second'>
-                <div>
-                    <input type="radio" id="radio2" name="payment"/>
-                    <label htmlFor='radio2'>Swish</label>
-                </div>
-                    <div className='logo-container'><img src={swish} alt="swish logo"/></div>
-           
-            </div>
+            {openPayment &&
+            <PaymentComponent setPaymentMethod={setPaymentMethod}/>
+            }
 
-            <div className='payment-div radio-third'>
-                <div>
-                    <input type="radio" id="radio3" name="payment"/>
-                    <label htmlFor='radio3'>PayPal</label>
-                </div>
-                
-                    <div className='logo-container'><img src={paypal} alt="paypal logo"/></div>
+            {openPayment && 
+                <RedeemCode setHasDiscount={setHasDiscount} setDiscount={setDiscount}/>
+            }
+
+<div className={openPayment ? 'final-cost-div visible': 'final-cost-div hidden'}>
+        <p className='total-text'>Subtotal: ${total}</p>
+        <p className='total-text'>Shipping cost: {selectedOption === 'express' ? '+$15' : '$0' }</p>
+        {hasDiscount && <p className='total-text'>10% discount: -${discount}</p>}
+        <p className='line'></p>
+        <p className='final-total'>Total: ${calculateTotal()}</p>
+</div>
+</div>
+       
+        
+        <button 
+            className={openPayment ? 'pay-btn visible': 'pay-btn hidden'} 
+            onClick={openMessage}>
+                Pay
+            </button>
+
+            {showMessage &&    
+            <div className='message-container'>
+                <p className='thank-you-text'>Thank you for you purchase!</p>
+                <p className='successful-text'><b>${calculateTotal()}</b> has successfully been paid with {paymentMethod}</p>
+                <button className='ok-btn' onClick={resetAll}>OK</button>
             </div>
-        </div>
+            }
+  
     </div>
+    <Footer color="grey"/>
+    </>
   )
 }
  

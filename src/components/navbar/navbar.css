@@ -19,11 +19,6 @@ nav {
     align-items: center;
 }
 
-.controller-img {
-    width: 50px;
-    margin-left: 5px;
-}
-
 .logo {
     font-family: 'spritendo';
     font-size: 16px;
@@ -35,6 +30,18 @@ nav {
     cursor: pointer;
 }
 
+.login-link:hover {
+    text-decoration: underline;
+}
+
+.name {
+    cursor: pointer;
+}
+
+.name:hover {
+    text-decoration: underline;
+}
+
 .logout {
     cursor: pointer;
 }
@@ -43,46 +50,37 @@ nav {
     text-decoration: underline;
 }
 
-.outer-circle {
-    width: 37px;
-    height: 37px;
-    border-radius: 50%;
-    background-color: lightblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .navbar-right {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
-    width: 20%;
+    width: 30%;
 }
 
-.magn {
-    font-size: 22px;
+.search-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40px;
     cursor: pointer;
 }
 
-.head-img {
-    width: 30px;
-    height: 30px;
-    position: relative;
+.search-text:hover {
+    text-decoration: underline;
 }
 
-.head-img img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    object-fit: contain;
+.magn {
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 4px;
+
 }
+
 
 .nav-profile {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
     width: 10rem;
 }
@@ -99,6 +97,7 @@ nav {
     font-size: 20px;
     cursor: pointer;
     transition: all 0.15s ease-in;
+    margin-left: 40px;
 }
 
 .cart-button:hover {

@@ -3,15 +3,20 @@ import { Register } from '../components/register/Register'
 import { useState } from 'react'
 import { Login } from '../components/login/Login'
 import { Success } from '../components/Success'
+import { Footer } from '../footer/Footer'
 
+type Color = 'grey' | 'white'
 
-
+type FooterProps = {
+  color: Color;
+}
 
 
 export const Loginpage = () => {
 
   const [showLoginForm, setShowLoginForm]= useState<boolean>(true);
   const [successful, setSuccessful]= useState<boolean>(false);
+
 
   const showLogin = () => {
     setShowLoginForm(true)
@@ -34,10 +39,14 @@ export const Loginpage = () => {
 
 
   return (
+    <>
     <div className='login-page'>
         {successful ? <Success handleBtnClick={handleBtnClick} />:
         <>{showLoginForm ? <Login showRegister={showRegister}/> : <Register showSuccess={showSuccess} showLogin={showLogin}/>}
         </>}
+    
     </div>
+    <Footer color="grey"/>
+    </>
   )
 }

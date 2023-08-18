@@ -1,0 +1,65 @@
+.code {
+    margin-top: 60px;
+    margin-bottom: -20px;
+    letter-spacing: 0.3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.code-input {
+    margin-left: 10px;
+    width: 170px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 6px 20px 6px 8px;
+    font-size: 14px;
+}
+
+.ok-button {
+    padding: 4px 20px;
+    margin: 0px;
+    width: 60px;
+    background-color: var(--green);
+    border-radius: 5px;
+    color: var(--white);
+    letter-spacing: 1px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.ok-button:hover {
+    opacity: 0.8;
+}
+
+.ok-button:active {
+    transform: translateY(2px);
+}
+
+.wrong-code {
+    color: var(--red);
+    font-size: 12px;
+    position: absolute;
+    top: -70%;
+    right: 20%;
+}
+
+.discount-text {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.discount-text p {
+    font-size: 18px;
+}
+
+.checkmark {
+    color: var(--green);
+    font-size: 40px;
+    margin-left: 10px;
+}

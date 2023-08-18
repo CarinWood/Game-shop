@@ -3,6 +3,7 @@ import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import itemData from '../data/Items.json'
 import { useState } from 'react'
 import GameItem from '../components/gameItem.tsx/GameItem';
+import { Footer } from '../footer/Footer';
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState<string>('')
@@ -12,6 +13,7 @@ const Search = () => {
   }
  
   return (
+    <>
     <div className='search-container'>
       <form className='search-form'>
         <input 
@@ -32,9 +34,12 @@ const Search = () => {
           }).map((item) => {
             return<div key={item.id}> {searchTerm === '' ? '' : <GameItem _id={item.id} _title={item.title} _url={item.url} _price={item.price}/>}</div>
           })}
+            
       </div>
-
+   
     </div>
+            <Footer color={"white"} />
+    </>
   )
 }
 

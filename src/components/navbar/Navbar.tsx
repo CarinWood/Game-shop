@@ -7,7 +7,6 @@ import princesshead from '../../assets/images/princesshead.png'
 import toadhead from '../../assets/images/toadhead.png'
 import yoshihead from '../../assets/images/yoshihead.png'
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
-import { useProfilePic } from '../../contexts/ProfilePicContext'
 import { FaCartShopping } from "react-icons/fa6";
 import { useShoppingCart } from '../../contexts/ShoppingCartContext'
 
@@ -15,7 +14,6 @@ import { useShoppingCart } from '../../contexts/ShoppingCartContext'
 export const Navbar = () => {
 
     const {user, setUser} = useUserContext()
-    const {profilePic} = useProfilePic()
 
     const { open, quantity, setOpen } = useShoppingCart()
 
@@ -28,7 +26,7 @@ export const Navbar = () => {
     }
   
     const toShop = () => {
-        navigate('/shop')
+        navigate('/')
         setOpen(false)
     }
 
@@ -37,19 +35,11 @@ export const Navbar = () => {
       navigate('/search')
     }
 
-    const imagePicker = () => {
-
-      switch(profilePic) {
-        case 'mario': return mariohead;
-        case 'luigi': return luigihead;
-        case 'princess': return princesshead;
-        case 'yoshi': return yoshihead;
-        case 'toad': return toadhead;
-      }
-     
-      
+    const toMemberPage = () => {
+      navigate('/member')
     }
 
+    
     const toggleCart = () => {
       setOpen(!open)
     }
@@ -65,11 +55,11 @@ export const Navbar = () => {
           <div className='navbar-right'>
               {user !== null ? 
               <div className='nav-profile'>
-                  <div className='outer-circle'><div className='head-img'><img src={imagePicker()}/></div></div>
-                  <p>{user} <span className='logout' onClick={toLogin}>(Logout)</span></p>
+                  
+                  <p><span className='name' onClick={toMemberPage}>{user}</span> <span className='logout' onClick={toLogin}>(Sign out)</span></p>
               </div>
-              : <p className='login-link' onClick={toLogin}>Login</p>}
-              <div onClick={toSearch}><HiOutlineMagnifyingGlass className='magn'/></div>
+              : <p className='login-link' onClick={toLogin}>Sign in</p>}
+              <div onClick={toSearch} className='search-text'>Search<HiOutlineMagnifyingGlass className='magn'/></div>
               <p className='cart-button' onClick={toggleCart}>
                 <FaCartShopping/>
                 <span className='digit'>{quantity}</span>

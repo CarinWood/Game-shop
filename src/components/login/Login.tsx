@@ -40,14 +40,14 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         setUser(username)
         navigate('/member')
     } else {
-        alert('you failed!!!!')
+        alert('Wrong username or password!')
     }
 }
 
   return (
     <div className='container'>
         <p>Login</p>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='form'>
             <div className='login-div'>
                 <label htmlFor="username">Username:</label>
                 <input 

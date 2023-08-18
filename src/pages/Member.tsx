@@ -1,9 +1,12 @@
 import "../styles/member.css";
 import { useContext } from "react";
 import { UserContext, useUserContext } from "../contexts/UserContext";
-
+import { FaHeart} from "react-icons/fa";
 import mario from "../assets/images/mario.png";
-import { Carousel } from "../components/Carousel/Carousel";
+import { useWishList } from "../contexts/WishlistContext";
+import GameItem from "../components/gameItem.tsx/GameItem";
+import { WishItem } from "../components/wishItem/WishItem";
+import { Footer } from "../footer/Footer";
 
 
 
@@ -12,10 +15,12 @@ import { Carousel } from "../components/Carousel/Carousel";
 
 export const Member = () => {
   const {user, setUser} = useUserContext()
+  const { wishList, setWishList } = useWishList()
 
 
 
   return (
+    <>
     <div className="member-container">
       <p className="welcome-message">Welcome {user}!</p>
 
@@ -37,10 +42,27 @@ export const Member = () => {
           </div>
         </div>
       </article>
-          
+        
+  
+        <p className="wishlist-text"><FaHeart className="redheart"/> Your Wishlist:</p>
+        
+        <div className="shop-container">
+          {wishList.map((item) => {
+            return <div key={item.id}>
+              <WishItem 
+                _id={item.id} 
+                _title={item.title} 
+                _url={item.url} 
+                _price={item.price} 
+              />
+            </div>
+          })}
 
-        <p className="choose-text">Choose a new avatar for your profile</p>
-        <Carousel/>
+        </div>
+        
     </div>
+    <Footer color="white" />
+    </>
   );
 };
+  

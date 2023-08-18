@@ -21,7 +21,7 @@
     margin-top: 0px;
 }
 
-form {
+.form {
    border: 8px solid var(--white);
    padding: 30px;
    display: flex;
@@ -32,7 +32,7 @@ form {
    border-radius: 10px;
 }
 
-form div {
+.form div {
     width: 450px;
     display: flex;
     justify-content: space-between;
@@ -40,7 +40,7 @@ form div {
     position: relative;
 }
 
-form div .warning {
+.form div .warning {
     font-size: 10px;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -49,7 +49,7 @@ form div .warning {
     right: 19%;
     top: -14%;
 }
-form div .not-equal {
+.form div .not-equal {
     font-size: 10px;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -68,14 +68,14 @@ form div .not-equal {
 
 }
 
-form label {
+.form label {
     text-align: left;
     width: 200px;
     font-size: 18px;
     margin: 15px;
 }
 
-form input {
+.form input {
     margin: 15x;
     width: 207px;
     height: 32px;
@@ -84,7 +84,7 @@ form input {
     border-radius: 5px;
 }
 
-form button {
+.form button {
     margin-top: 24px;
     border-radius: 10px;
     width: 5.5rem;
@@ -100,11 +100,11 @@ form button {
     align-self: center;
 }
 
-form button:hover {
+.form button:hover {
     opacity: 0.7;
 }
 
-form button.active {
+.form button.active {
     transform: translateY(2px);
 }
 
@@ -178,7 +178,7 @@ form button.active {
         overflow-x: hidden;
     }
 
-    form {
+    .form {
         border: 8px solid var(--white);
         padding: 30px;
         display: flex;
@@ -191,7 +191,7 @@ form button.active {
         height: auto;
      }
 
-     form div {
+     .form div {
         width: 100%;;
         display: flex;
         flex-direction: column;
@@ -201,14 +201,14 @@ form button.active {
         height: auto;
     }
 
-    form label {
+    .form label {
         text-align: left;
         width: 200px;
         font-size: 18px;
         margin: 0px;
     }
     
-    form input {
+    .form input {
         margin-top: 8px;
         width: 200px;
         padding-left: 5px;

@@ -5,18 +5,19 @@ import { Loginpage } from './pages/Loginpage';
 import { Member } from './pages/Member';
 import { Routes, Route} from 'react-router-dom'
 import Search from './pages/Search';
-import {  ProfilePicContextProvider } from './contexts/ProfilePicContext';
 import { Shop } from './pages/Shop';
 import { Cart } from './components/cart/Cart';
 import { ShoppingCartProvider } from './contexts/ShoppingCartContext';
 import { Checkout } from './pages/Checkout';
+import { WishListProvider } from './contexts/WishlistContext';
 
 function App() {
   return (
     <div className="App">
       <ShoppingCartProvider>
       <UserContextProvider>
-        <ProfilePicContextProvider>
+        <WishListProvider>
+    
 
         <Navbar/>
         <Cart/>
@@ -25,11 +26,14 @@ function App() {
           <Route path="/login" element={<Loginpage/>} />
           <Route path="/member" element={<Member/>} />
           <Route path="/search" element={<Search/>} />
-          <Route path="/shop" element={<Shop/>} />
+          <Route path="/" element={<Shop/>} />
           <Route path="/checkout" element={<Checkout/>}/>
         </Routes>
 
-        </ProfilePicContextProvider>
+  
+
+
+        </WishListProvider>
       </UserContextProvider>
       </ShoppingCartProvider>
     </div>

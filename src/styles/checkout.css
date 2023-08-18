@@ -82,7 +82,7 @@
     margin-top: 100px;
 }
 
-.payment-div {
+.payment-div, .shipping-div {
     width: 600px;
     height: 50px;
     display: flex;
@@ -95,6 +95,13 @@
 #radio1, #radio2, #radio3 {
     margin-left: 10px;
     margin-right: 20px;
+}
+
+.price-offer {
+    margin-right: 30px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    font-size: 15px;
 }
 
 .logo-container {
@@ -113,7 +120,7 @@
     object-fit: cover;
 }
 
-.radio-first {
+.radio-first, .shipping-first {
     border-radius: 10px 10px 0px 0px;
     border-bottom: none;
 }
@@ -122,3 +129,121 @@
     border-top: none;
     border-radius: 0px 0px 10px 10px;
 }
+
+.shipping-second {
+    border-radius: 0px 0px 10px 10px;
+}
+
+#ship1, #ship2 {
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.pay-btn {
+    margin-top: 100px;
+    font-size: 22px;
+    background-color: var(--green);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.pay-btn:hover {
+    opacity: 0.8;
+}
+
+.final-cost-div {
+    margin-top: 100px;
+}
+
+.line {
+    width: 240px;
+    height: 0.5px;
+    background-color: var(--black);
+    margin: 10px 0px;
+}
+
+.continue-btn {
+    letter-spacing: 0.4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 8px;
+    background-color: var(--green);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+
+.visible {
+    visibility: visible;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.total-text {
+    font-size: 19px;
+    margin-bottom: 2px;
+    letter-spacing: 1px;
+}
+
+.final-total {
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.message-container {
+    width: 380px;
+    height: 200px;
+    background-color: var(--white);
+    border: 4px solid var(--green);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    margin-left: -200px;
+    padding-top: 25px;
+}
+
+.thank-you-text {
+    font-size: 18px;
+    font-family: 'Open Sans';
+    margin-bottom: 10px;
+}
+
+.successful-text {
+    font-size: 18px;
+    width: 280px;
+    text-align: center;
+}
+
+.ok-btn {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 6px 8px;
+    border-radius: 10px;
+    border: none;
+    width: 100px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.ok-btn:hover {
+    opacity: 0.8;
+}
+

@@ -3,6 +3,7 @@ import { FaHeart, FaRegHeart} from "react-icons/fa";
 import { useState, useEffect } from 'react'
 import { LargerImage } from '../largerImage/LargerImage';
 import { useShoppingCart } from '../../contexts/ShoppingCartContext';
+import { useWishList } from '../../contexts/WishlistContext';
 
 
 
@@ -18,13 +19,54 @@ const GameItem = ({_id, _title, _url, _price}: gameItemProps) => {
     const [favourite, isFavourite] = useState(false)
     const [openImage, setOpenImage] = useState(false)
     const {cart, setCart, handlePlus} = useShoppingCart()
+    const { wishList, setWishList } = useWishList()
 
+   useEffect(() => {
+        toggleHeart()
+   }, [wishList])
+
+
+   const toggleHeart = () => {
+    const productExists = wishList.findIndex(item => item.id === _id)
+
+    if(productExists !== -1) {
+        isFavourite(true)
+    } else {
+      isFavourite(false)
+    }
+
+
+    }
    
 
  
 
-    const handleClickHeart = () => {
-            isFavourite(!favourite)
+    const addToWishList = () => {
+            isFavourite(true)
+
+            const product = {
+                id: _id,
+                title: _title,
+                url: _url,
+                price: _price,
+                quantity: 1
+            }
+
+          
+
+            const productExists = wishList.findIndex(item => item.id === _id)
+
+            if(productExists !== -1) {
+                return
+            } else {
+                setWishList(prevWishList => [...prevWishList, product])
+            }
+        
+    }
+
+    const deleteFromWishList = () => {
+   
+        setWishList(wishList.filter((prevItem) => prevItem.id !== _id))
     }
 
     const openLargerImage = () => {
@@ -36,7 +78,6 @@ const GameItem = ({_id, _title, _url, _price}: gameItemProps) => {
     }
 
     const handleBuyButton = () => {
-        console.log('handleBuyButton is clicked')
     
         const product = {
             id: _id,
@@ -82,8 +123,8 @@ const GameItem = ({_id, _title, _url, _price}: gameItemProps) => {
             <button className='card-btn' onClick={handleBuyButton}>Add to cart</button>
 
             {/* favourite heart */}
-            {favourite ? <FaHeart className='card-fav red' onClick={() => handleClickHeart()}/>
-            : <FaRegHeart className='card-fav' onClick={() => handleClickHeart()}/>
+            {favourite ? <FaHeart className='card-fav red' onClick={() => deleteFromWishList()}/>
+            : <FaRegHeart className='card-fav' onClick={() => addToWishList()}/>
             }
 
         </article>

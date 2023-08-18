@@ -1,0 +1,9 @@
+.closeIcon {
+    font-size: 30px;
+    color: rgb(96, 94, 94);
+}
+
+.closeIcon:hover {
+    opacity: 0.8    ;
+    color: rgb(96, 94, 94);
+}

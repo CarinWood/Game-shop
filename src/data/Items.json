@@ -63,5 +63,26 @@
         "price": 62.99,
         "url": "/images/resident.jpg",
         "quantity": 0
+    },
+    {
+        "id": 10,
+        "title": "Sonic Superstars",
+        "price": 59.99,
+        "url": "/images/sonic.jpg",
+        "quantity": 0
+    },
+    {
+        "id": 11,
+        "title": "Trolls Remix Rescue",
+        "price": 49.99,
+        "url": "/images/trolls.jpg",
+        "quantity": 0
+    },
+    {
+        "id": 12,
+        "title": "Just Dance 2023 Edition",
+        "price": 19.93,
+        "url": "/images/dance.jpg",
+        "quantity": 0
     }
 ]
