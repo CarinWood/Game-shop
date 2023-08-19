@@ -11,7 +11,10 @@ import { ShoppingCartProvider } from './contexts/ShoppingCartContext';
 import { Checkout } from './pages/Checkout';
 import { WishListProvider } from './contexts/WishlistContext';
 
+
 function App() {
+
+ 
   return (
     <div className="App">
       <ShoppingCartProvider>

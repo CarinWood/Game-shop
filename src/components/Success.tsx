@@ -16,7 +16,7 @@ export const Success:FC<Props> = ({handleBtnClick}) => {
     <div className='success-popup'>
         <p>Success</p>
         <p>You are now a member</p>
-        <button onClick={handleBtnClick}>To Login</button>
+        <button onClick={handleBtnClick} className='success-btn'>To Login</button>
     </div>
   )
 }

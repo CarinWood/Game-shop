@@ -45,8 +45,8 @@ export const Member = () => {
         
   
         <p className="wishlist-text"><FaHeart className="redheart"/> Your Wishlist:</p>
-        
-        <div className="shop-container">
+        { wishList.length < 1 ? <p className="nothing">(There is nothing in your Wishlist yet...)</p>
+        :<div className="wish-container">
           {wishList.map((item) => {
             return <div key={item.id}>
               <WishItem 
@@ -59,9 +59,14 @@ export const Member = () => {
           })}
 
         </div>
+        }
+
+        
         
     </div>
+
     <Footer color="white" />
+  
     </>
   );
 };

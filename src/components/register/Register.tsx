@@ -1,21 +1,26 @@
-import { FaEye, FaEyeSlash } from "react-icons/fa";
-import React, { FC, useState } from 'react';
+import { FaEye, FaEyeSlash } from "react-icons/fa"
+import React, { FC, useState } from 'react'
 import applause from '../../assets/sound/applause.wav'
+
+
 
 interface Props {
     showLogin: () => void
     showSuccess: () => void
+    setRunConfetti: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export const Register:FC<Props> = ({showLogin, showSuccess}) => {
+export const Register:FC<Props> = ({showLogin, showSuccess, setRunConfetti}) => {
     const [hidePassword, setHidePassword] = useState(true);
-    const [hideConfirmPassword, setHideConfirmPassword] = useState(true);
+    const [hideConfirmPassword, setHideConfirmPassword] = useState(true)
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
     const [confirmPassword, setConfirmPassword] = useState<string>('')
     const [username, setUsername] = useState<string>('')
     const [hasSpaces, setHasSpaces] = useState<boolean>(false)
     const [isNotEqual, setIsNotEqual] = useState<boolean>(false)
+
+
     
 
 
@@ -24,7 +29,12 @@ export const Register:FC<Props> = ({showLogin, showSuccess}) => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
        e.preventDefault();
        if(password === confirmPassword) {
-        new Audio(applause).play()  
+        new Audio(applause).play()
+        setRunConfetti(true)
+        setTimeout(() => {
+            setRunConfetti(false)
+        }, 4000)
+     
             setIsNotEqual(false)
             showSuccess()
            localStorage.setItem("_username", username)
