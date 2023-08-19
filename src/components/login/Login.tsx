@@ -46,7 +46,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
   return (
     <div className='container'>
-        <p>Login</p>
+        <p>Sign in</p>
         <form onSubmit={handleSubmit} className='form'>
             <div className='login-div'>
                 <label htmlFor="username">Username:</label>
