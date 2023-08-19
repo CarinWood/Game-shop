@@ -128,4 +128,9 @@ nav {
     .mobile {
         visibility: hidden;
     }
+
+    .cart-button:hover {
+        background-color: var(--red);
+        color: var(--white);
+    }
 }
