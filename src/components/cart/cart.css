@@ -195,6 +195,39 @@
 @media screen and (max-width: 400px) {
     .cart {
         width: 98%;
-        min-height: 470px;    
+        min-height: 470px;  
+        padding-top: 30px;  
     }
+
+    .cart-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        margin-top: 25px;
+        padding-bottom: 10px;
+        border-bottom: 0.2px solid rgb(196, 196, 196);
+    }
+
+    .close-cart-btn {
+        right: 4%;
+        top: 3.2%;
+    }
+
+    .checkout-btn {
+
+        margin-left: 10px;
+    }
+
+    .tot {
+        color: var(--red);
+        font-size: 18px;
+        font-weight: 600;
+        position: absolute;
+        bottom: 6%;
+        align-self: flex-end;
+        margin-right: 15px;
+    }
+
+ 
 }
