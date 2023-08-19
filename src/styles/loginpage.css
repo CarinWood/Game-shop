@@ -244,5 +244,9 @@
         bottom: 20%; 
     }
 
+    .register-container {
+            height: 75vh;
+    }
+
 }
 

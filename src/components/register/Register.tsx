@@ -84,7 +84,7 @@ export const Register:FC<Props> = ({showLogin, showSuccess, setRunConfetti}) => 
     
   return (
     <>
-    <div className="container">
+    <div className="container register-container">
         <p>Create an account</p>
         <form className='register-form form' onSubmit={handleSubmit}>
 
