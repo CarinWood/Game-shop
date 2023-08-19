@@ -215,6 +215,16 @@
     }
 
     .checkout-btn {
+        width: 6.5rem;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 5%;
+        align-self: flex-start;
 
         margin-left: 10px;
     }
