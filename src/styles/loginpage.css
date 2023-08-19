@@ -248,5 +248,14 @@
             height: 75vh;
     }
 
+    .success-popup {
+        width: 320px;
+        height: 200px;
+        margin-top: 30px;
+        left: 50%;
+        margin-left: -160px;
+        z-index: 10;
+    }
+
 }
 
