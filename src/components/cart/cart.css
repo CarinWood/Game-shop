@@ -225,7 +225,6 @@
         position: absolute;
         bottom: 5%;
         align-self: flex-start;
-
         margin-left: 10px;
     }
 
@@ -236,7 +235,7 @@
         position: absolute;
         bottom: 6%;
         align-self: flex-end;
-        margin-right: 15px;
+        margin-right: 10px;
     }
 
  
