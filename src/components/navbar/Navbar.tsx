@@ -69,7 +69,12 @@ export const Navbar = () => {
           </div>
         
     </nav>
-    <MobileNav toggleCart={toggleCart}/>
+      <MobileNav 
+          toggleCart={toggleCart}
+          toSearch={toSearch}
+          toShop={toShop}
+          toLogin={toLogin}
+      />
     </>
   )
 }
