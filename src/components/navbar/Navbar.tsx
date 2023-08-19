@@ -9,6 +9,7 @@ import yoshihead from '../../assets/images/yoshihead.png'
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import { FaCartShopping } from "react-icons/fa6";
 import { useShoppingCart } from '../../contexts/ShoppingCartContext'
+import { MobileNav } from '../mobileNav/MobileNav'
 
 
 export const Navbar = () => {
@@ -47,7 +48,8 @@ export const Navbar = () => {
    
 
   return (
-    <nav>
+    <>
+    <nav className='mobile'>
           <div className='navbar-left'>
               <p className='logo' onClick={toShop}>The Game Shop</p>
           </div>
@@ -67,5 +69,7 @@ export const Navbar = () => {
           </div>
         
     </nav>
+    <MobileNav toggleCart={toggleCart}/>
+    </>
   )
 }
