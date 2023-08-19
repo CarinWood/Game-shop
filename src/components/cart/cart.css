@@ -191,3 +191,10 @@
 .cart-price {
     margin-left: 100px;
 }
+
+@media screen and (max-width: 400px) {
+    .cart {
+        width: 98%;
+        min-height: 470px;    
+    }
+}
