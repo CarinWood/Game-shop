@@ -23,6 +23,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    
 }
 
 .container p {
@@ -185,16 +186,15 @@
     .login-page {
         justify-content: flex-start;
         padding-top: 15vh;
+        height: 100vh;
     }
     .container {
         width: 90%;
-        height: 55vh;
-        overflow-x: hidden;
+        height: 45vh;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
         position: relative;
-      
     }
 
     .form {
@@ -241,11 +241,11 @@
         font-size: 12px!important;
         position: absolute;
         left: 10%;
-        bottom: 20%; 
+        bottom: -10%; 
     }
 
     .register-container {
-            height: 75vh;
+            height: 58vh;
     }
 
     .success-popup {
