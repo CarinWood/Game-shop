@@ -1,11 +1,18 @@
-.widget-wrap {
+.bubble {
     width: 200px;
     height: 30px;
     padding: 10px;
     border-radius: 20px;
     position: absolute;
-    top: -55%;
-    left: -22.4%;
+    top: -62%;
+    left: -27%;
+  }
+.widget-wrap {
+    width: 200px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 20px;
+ 
   }
 
 
@@ -47,6 +54,7 @@
     align-items: center;
     justify-content: center;
     font-size: 14px;
+    letter-spacing: 0.5px;
   }
 
   .create-text {
@@ -60,7 +68,20 @@
     text-decoration: underline;
     
   }
+
+  .visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.2s ease;
+}
    
+.invisible {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: 0.2s ease;
+}
 
   
 

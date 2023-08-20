@@ -10,6 +10,10 @@ interface Props {
 export const SpeechBubble:FC<Props> = ({toggleBubbleFunc}) => {
     const {setShowLoginForm} = useUserContext()
     const navigate = useNavigate()
+ 
+
+
+    
 
     const toLoginPage = () => {
         navigate('/login')
@@ -27,7 +31,7 @@ export const SpeechBubble:FC<Props> = ({toggleBubbleFunc}) => {
   return (
     <div className="widget-wrap">
         <div className="speech top">
-            <div className='bubble-login-btn' onClick={toLoginPage}>Log in</div> 
+            <div className='bubble-login-btn' onClick={toLoginPage}>Sign in</div> 
             <p className='create-text'>Not a member yet? <span onClick={toRegisterPage}>Create account</span></p>
         </div>
     </div>
