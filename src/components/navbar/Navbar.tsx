@@ -55,6 +55,7 @@ export const Navbar = () => {
           </div>
         
           <div className='navbar-right'>
+            
               {user !== null ? 
               <div className='nav-profile'>
                   

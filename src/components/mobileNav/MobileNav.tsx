@@ -1,10 +1,11 @@
 import './mobileNav.css'
 import { FaCartShopping } from "react-icons/fa6";
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { useShoppingCart } from '../../contexts/ShoppingCartContext';
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import { AiOutlineUser } from "react-icons/ai";
 import { useNavigate } from 'react-router-dom';
+import { SpeechBubble } from '../speechBubble/SpeechBubble';
 
 interface Props  {
     toggleCart: () => void
@@ -18,8 +19,12 @@ interface Props  {
 export const MobileNav:FC<Props> = ({toggleCart, toSearch, toShop, toLogin}) => {
         const navigate = useNavigate()
         const {quantity } = useShoppingCart()
+        const [toggleBubble, setToggleBubble] = useState<boolean>(false)
 
 
+        const toggleBubbleFunc = () => {
+          setToggleBubble(!toggleBubble)
+        }
 
 
   return (
@@ -29,9 +34,12 @@ export const MobileNav:FC<Props> = ({toggleCart, toSearch, toShop, toLogin}) => 
         </div>
 
         <div className='right-mobile-div'>
-
+        {toggleBubble && <SpeechBubble toggleBubbleFunc={toggleBubbleFunc}/>}
+          
             {/* user */}
-            <p className='mobile-login-icon' onClick={toLogin}><AiOutlineUser/></p>
+            <p className='mobile-login-icon' onClick={toggleBubbleFunc}>
+              <AiOutlineUser/>
+            </p>
 
             {/* search */}
             <p className='mobile-search-logo' onClick={toSearch}><HiOutlineMagnifyingGlass/></p>

@@ -1,0 +1,64 @@
+.widget-wrap {
+    width: 200px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    position: absolute;
+    top: -50%;
+    left: -22.4%;
+  }
+
+
+.speech {
+    font-size: 12px;
+    color: #fff;
+    background: var(--white);
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 100px auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+  }
+  
+
+  .speech::after {
+    content: "";
+    border: 20px solid transparent;
+    position: absolute;
+  }
+   
+  .top.speech::after {
+    /* (C1-1) UP TRIANGLE */
+    border-bottom-color: var(--white);
+    border-top: 0;
+   
+    /* (C1-2) POSITION AT TOP */
+    top: -12px; left: 50%;
+    margin-left: -20px;
+  }
+
+  .bubble-login-btn {
+    background-color: var(--red);
+    color: var(--white);
+    border-radius: 20px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .create-text {
+    color: var(--black);
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .create-text span {
+    text-decoration: underline;
+    
+  }
+   
+
+  
+
