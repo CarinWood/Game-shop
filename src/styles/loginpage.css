@@ -265,5 +265,9 @@
         color: rgb(115, 114, 114);
     }
 
+    .login-register-text {
+        bottom: -25%;
+    }
+
 }
 

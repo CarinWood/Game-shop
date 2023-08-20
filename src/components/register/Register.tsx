@@ -147,7 +147,7 @@ export const Register:FC<Props> = ({showLogin, showSuccess, setRunConfetti}) => 
            
         </form>
         
-        <p className='small-text'>Already a member? <span onClick={showLogin}>Log in</span></p>
+        <p className='small-text login-register-text'>Already a member? <span onClick={showLogin}>Log in</span></p>
     </div>
    
     </>
