@@ -5,6 +5,7 @@ import { Login } from '../components/login/Login'
 import { Success } from '../components/Success'
 import { Footer } from '../footer/Footer'
 import { ConfettiComponent } from '../components/ConfettiComponent'
+import { useUserContext } from '../contexts/UserContext'
 
 
 
@@ -19,7 +20,7 @@ type FooterProps = {
 
 export const Loginpage = () => {
 
-  const [showLoginForm, setShowLoginForm]= useState<boolean>(true);
+  const {showLoginForm, setShowLoginForm} = useUserContext()
   const [successful, setSuccessful]= useState<boolean>(false);
   const [runConfetti, setRunConfetti] = useState<boolean>(false)
 
