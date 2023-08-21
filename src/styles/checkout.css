@@ -14,7 +14,6 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-
 }
 
 .checkout-headline {
@@ -247,3 +246,36 @@
     opacity: 0.8;
 }
 
+@media screen and (max-width: 400px) {
+    .name-div {
+        flex-direction: column;
+    }
+
+    .information-form {
+        width: 400px;
+        align-items: center;
+    }
+
+    .checkout-headline {
+        text-align: center;
+    }
+
+    .first {
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .second {
+        border-radius: 0px;
+    }
+
+    .address-input {
+        width: 300px;
+        border-radius: 0px;
+        justify-self: center;
+
+    }
+
+    .zip-country-div {
+        flex-direction: column;
+    }
+}
