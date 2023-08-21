@@ -78,13 +78,27 @@
 
   .code-input {
     margin-left: 0px;
-    width: 170px;
+    width: 180px;
+    height: 35px;
+    font-size: 15px;
+}
+
+.ok-button {
+  padding: 6px;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
 }
 
 .wrong-code {
     top: -52%;
     left: 1%;
     font-size: 12px;
+}
+
+.discount-text {
+    width: 320px;
 }
 
 }
