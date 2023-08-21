@@ -93,7 +93,6 @@ export const Register:FC<Props> = ({showLogin, showSuccess, setRunConfetti}) => 
                 {hasSpaces && <span className="warning">Cannot contain spaces!</span>}
                 <input name="username"
                 required 
-                placeholder='Username'
                 value={username}
                 onChange={changeUsername}
                 maxLength={10}
@@ -103,11 +102,10 @@ export const Register:FC<Props> = ({showLogin, showSuccess, setRunConfetti}) => 
            
 
             <div>
-                <label>Email:</label>
+                <label className="form-label">Email:</label>
                 <input 
                     required
                     type="email" 
-                    placeholder="example@mail.com"
                     value={email}
                     onChange={changeEmail}
                 />
@@ -115,11 +113,10 @@ export const Register:FC<Props> = ({showLogin, showSuccess, setRunConfetti}) => 
 
             <div>
                 {isNotEqual && <span className="not-equal">Passwords don't match!</span>}
-                <label>Password:</label>
+                <label className="form-label">Password:</label>
                 <input 
                     required
                     type={hidePassword ? "password" : "text"} 
-                    placeholder="********" 
                     value={password}
                     onChange={changePassword}
                 />
@@ -128,11 +125,10 @@ export const Register:FC<Props> = ({showLogin, showSuccess, setRunConfetti}) => 
                 </span>
             </div>  
             <div>
-                <label>Confirm password:</label>
+                <label className="form-label">Confirm password:</label>
                 <input 
                     required
                     type={hideConfirmPassword ? 'password' : 'text'} 
-                    placeholder="********"
                     value={confirmPassword}
                     onChange={changeConfirmPassword}
                 />

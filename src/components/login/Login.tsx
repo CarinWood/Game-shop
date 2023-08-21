@@ -53,18 +53,16 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
                 <input 
                     required
                     name="username" 
-                    placeholder='Username'
                     value={typedName}
                     onChange={handleTypedName}
                 />
             </div>
 
             <div className='login-div'>
-                <label>Password:</label>
+                <label className='form-label'>Password:</label>
                 <input 
                     required
                     type={hidePassword ? "password" : "text"} 
-                    placeholder="********" 
                     value={typedPass}
                     onChange={handleTypedPassword}
                 />
