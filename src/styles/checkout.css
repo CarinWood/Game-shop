@@ -263,16 +263,16 @@
 
     .first {
         border-radius: 10px 0px 0px 0px;
-        width: 150px;
+        width: 170px;
     }
 
     .second {
         border-radius: 0px 10px 0px 0px;
-        width: 150px;
+        width: 170px;
     }
 
     .address-input {
-        width: 300px;
+        width: 340px;
         border-radius: 0px;
         justify-self: center;
 
@@ -283,15 +283,15 @@
     }
 
     .zip-code-input {
-        width: 100px;
+        width: 120px;
     }
 
     .county-input {
-        width: 200px;
+        width: 220px;
     }
 
     .shipping-div {
-        width: 300px;
+        width: 340px;
         justify-content: space-between;
         align-items: center;
      
