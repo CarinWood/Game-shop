@@ -62,9 +62,12 @@ export const RedeemCode:FC<Props> = ({setHasDiscount, setDiscount}) => {
         <BsCheckAll className='checkmark'/>
         </div>
     :<div className='code'>
-        <p>Redeem Code:</p>
+        <p className='redeem-code-text'>Redeem Code:</p>
         {wrongCode && <p className='wrong-code'>You entered the wrong code</p>}
-        <input className='code-input' onChange={handleTypedCode}/>
+        <input className='code-input' 
+        onChange={handleTypedCode}
+        placeholder="Redeem code"
+        />
         <div className='ok-button' onClick={checkCode}>OK</div>
     </div>
   }

@@ -296,4 +296,8 @@
         align-items: center;
      
     }
+
+    .payment-div {
+        width: 340px;
+    }
 }
