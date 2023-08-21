@@ -270,10 +270,14 @@
         bottom: -32%;
     }
 
-  
-
     .form-label {
         margin-top: 15px!important;
+    }
+
+    .form button {
+        padding: 0.5rem;
+        font-size: 15px;
+    
     }
 
 }

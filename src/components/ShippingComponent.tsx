@@ -23,7 +23,7 @@ export const ShippingComponent: FC<Props> = ({setOpenPayment, setSelectedOption}
         setSelectedOption('regular')
     }
 
-    const togglePayment = (e: React.FormEvent<HTMLFormElement>) => {
+    const togglePayment = (e: any) => {
         e.preventDefault()
         setOpenPayment(true);
        
@@ -66,7 +66,7 @@ export const ShippingComponent: FC<Props> = ({setOpenPayment, setSelectedOption}
         <p className='price-offer'>+ $15</p>
     </div>
 
-    <button className='continue-shipping-btn' type="submit">Continue<IoMdArrowDropdown/></button>
+    <div className='continue-shipping-btn' onClick={togglePayment}>Continue<IoMdArrowDropdown/></div>
     </form>
     </>
   )
