@@ -19,7 +19,7 @@ export const Checkout = () => {
     const [showMessage, setShowMessage] = useState<boolean>(false)
     const [paymentMethod, setPaymentMethod] = useState<string>('Klarna')
     const [hasDiscount, setHasDiscount] = useState<boolean>(false)
-    const [discount, setDiscount] = useState(0)
+    const [discount, setDiscount] = useState<number>(0)
   
     const navigate = useNavigate();
 
@@ -32,8 +32,14 @@ export const Checkout = () => {
         let freight:number; 
         selectedOption === 'express' ? freight = 15 : freight = 0;
         
-        let tot:number = total + freight - discount;
-        return parseFloat(tot.toFixed(2));
+        if (hasDiscount) {
+            let tot:number = total + freight- discount;
+            return parseFloat(tot.toFixed(2));
+        } else {
+               let tot:number = total + freight;
+                return parseFloat(tot.toFixed(2));
+        }
+     
     }
 
     const openMessage = () => {

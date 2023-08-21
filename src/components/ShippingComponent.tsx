@@ -23,7 +23,7 @@ export const ShippingComponent: FC<Props> = ({setOpenPayment, setSelectedOption}
         setSelectedOption('regular')
     }
 
-    const togglePayment = (e: any) => {
+    const togglePayment = (e: React.MouseEvent<HTMLDivElement>) => {
         e.preventDefault()
         setOpenPayment(true);
        
@@ -32,7 +32,7 @@ export const ShippingComponent: FC<Props> = ({setOpenPayment, setSelectedOption}
 
   return (
     <>
-        <form onSubmit={togglePayment}>  
+        <form>  
     <p className='checkout-headline payment-method'>Shipping</p>
 
 
@@ -66,7 +66,7 @@ export const ShippingComponent: FC<Props> = ({setOpenPayment, setSelectedOption}
         <p className='price-offer'>+ $15</p>
     </div>
 
-    <div className='continue-shipping-btn' onClick={togglePayment}>Continue<IoMdArrowDropdown/></div>
+    <div className='continue-btn' onClick={togglePayment}>Continue<IoMdArrowDropdown/></div>
     </form>
     </>
   )
