@@ -27,7 +27,10 @@ export const MobileNav:FC<Props> = ({toggleCart, toSearch, toShop, toLogin}) => 
 
         const toggleBubbleFunc = () => {
           setToggleBubble(!toggleBubble)
+   
         }
+
+   
 
           
         useEffect(() => {
