@@ -304,4 +304,21 @@
     .final-cost-div {
         width: 320px;
     }
+
+    .message-container {
+        width: 320px;
+        height: 200px;
+        background-color: var(--white);
+        border: 4px solid var(--green);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        position: fixed;
+        top: 30%;
+        left: 50%;
+        margin-left: -160px;
+        padding-top: 25px;
+    }
 }
