@@ -35,6 +35,11 @@
 @media screen and (max-width: 400px) {
     .larger-image-div {
         width: 320px;
+        height: 430px;
         margin-left: -160px;
+    }
+
+    .enlarged-image {
+        width: 220px;
     }
 }
