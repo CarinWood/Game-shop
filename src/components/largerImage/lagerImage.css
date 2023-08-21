@@ -31,3 +31,10 @@
 .enlarged-image {
     width: 280px;
 }
+
+@media screen and (max-width: 400px) {
+    .larger-image-div {
+        width: 320px;
+        margin-left: -160px;
+    }
+}

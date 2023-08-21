@@ -165,7 +165,7 @@
     margin: 10px 0px;
 }
 
-.continue-btn {
+.continue-btn, .continue-shipping-btn {
     letter-spacing: 0.4;
     display: flex;
     justify-content: center;

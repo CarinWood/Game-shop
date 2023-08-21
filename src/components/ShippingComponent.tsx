@@ -66,7 +66,7 @@ export const ShippingComponent: FC<Props> = ({setOpenPayment, setSelectedOption}
         <p className='price-offer'>+ $15</p>
     </div>
 
-    <button className='continue-btn' type="submit">Continue<IoMdArrowDropdown/></button>
+    <button className='continue-shipping-btn' type="submit">Continue<IoMdArrowDropdown/></button>
     </form>
     </>
   )
