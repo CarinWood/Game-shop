@@ -248,7 +248,8 @@
 
 @media screen and (max-width: 400px) {
     .name-div {
-        flex-direction: column;
+        flex-direction: row;
+
     }
 
     .information-form {
@@ -261,11 +262,13 @@
     }
 
     .first {
-        border-radius: 10px 10px 0px 0px;
+        border-radius: 10px 0px 0px 0px;
+        width: 150px;
     }
 
     .second {
-        border-radius: 0px;
+        border-radius: 0px 10px 0px 0px;
+        width: 150px;
     }
 
     .address-input {
@@ -276,6 +279,21 @@
     }
 
     .zip-country-div {
-        flex-direction: column;
+        flex-direction: row;
+    }
+
+    .zip-code-input {
+        width: 100px;
+    }
+
+    .county-input {
+        width: 200px;
+    }
+
+    .shipping-div {
+        width: 300px;
+        justify-content: space-between;
+        align-items: center;
+     
     }
 }
