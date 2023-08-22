@@ -4,21 +4,30 @@ import itemData from '../data/Items.json'
 import { useState } from 'react'
 import GameItem from '../components/gameItem.tsx/GameItem';
 import { Footer } from '../footer/Footer';
+import { GrFormClose } from "react-icons/gr";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState<string>('')
 
+
   const handleSearch = (e:React.ChangeEvent<HTMLInputElement>) => {
       setSearchTerm(e.target.value)
+      
+  }
+
+  const erase = () => {
+      setSearchTerm('')
   }
  
   return (
     <>
     <div className='search-container'>
       <form className='search-form'>
+        {searchTerm.length > 0 && <p className='close-icon' onClick={erase}><GrFormClose/></p>}
         <input 
           className='search-input'
           placeholder='What are you looking for?' 
+          value={searchTerm}
           onChange={handleSearch}
         />
        

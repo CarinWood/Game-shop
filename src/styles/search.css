@@ -1,7 +1,7 @@
 .search-container {
     width: 100%;
     min-height: 100%;
-    padding-top: 10vh;
+    padding-top: 16vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -13,7 +13,17 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    
+    position: relative;
+}
+
+.close-icon {
+    font-size: 28px;
+    opacity: 0.5;
+    cursor: pointer;
+    position: absolute;
+    top: 12%;
+    right: 13%;
+
 }
 
 .search-input {
@@ -22,6 +32,8 @@
     height: 40px;
     padding: 6px;
     font-size: 18px;
+    border-radius: 2px;
+    border: 1px solid grey;
 }
 
 .search-magnifyer {
@@ -48,5 +60,9 @@
         height: 40px;
         padding: 6px;
         font-size: 17px;
+    }
+
+    .close-icon {
+        right: 14%;
     }
 }
