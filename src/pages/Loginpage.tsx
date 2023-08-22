@@ -1,6 +1,6 @@
 import '../styles/loginpage.css'
 import { Register } from '../components/register/Register'
-import { useState, FC } from 'react'
+import { useState, FC, useEffect } from 'react'
 import { Login } from '../components/login/Login'
 import { Success } from '../components/Success'
 import { Footer } from '../footer/Footer'
@@ -24,7 +24,9 @@ export const Loginpage = () => {
   const [successful, setSuccessful]= useState<boolean>(false);
   const [runConfetti, setRunConfetti] = useState<boolean>(false)
 
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
 
   const showLogin = () => {

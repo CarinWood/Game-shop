@@ -1,7 +1,7 @@
 import '../styles/search.css'
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import itemData from '../data/Items.json'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import GameItem from '../components/gameItem.tsx/GameItem';
 import { Footer } from '../footer/Footer';
 import { GrFormClose } from "react-icons/gr";
@@ -9,6 +9,9 @@ import { GrFormClose } from "react-icons/gr";
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState<string>('')
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const handleSearch = (e:React.ChangeEvent<HTMLInputElement>) => {
       setSearchTerm(e.target.value)
