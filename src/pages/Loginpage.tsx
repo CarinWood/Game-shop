@@ -39,6 +39,7 @@ export const Loginpage = () => {
 
   const showSuccess = () => {
     setSuccessful(true)
+    window.scrollTo(0,0)
   
   }
 
