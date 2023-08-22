@@ -1,6 +1,6 @@
 import '../styles/checkout.css'
 import { useShoppingCart } from '../contexts/ShoppingCartContext'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { IoMdArrowDropdown } from "react-icons/io";
 import { ShippingComponent } from '../components/ShippingComponent'
 import { PaymentComponent } from '../components/PaymentComponent';
@@ -27,6 +27,10 @@ export const Checkout = () => {
             e.preventDefault()
             setOpenShipping(true);
     }
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 
     const calculateTotal = () => {
         let freight:number; 
